@@ -1,0 +1,1 @@
+const chatBot = new ChatBot();

@@ -1,0 +1,479 @@
+/* ---------------------------------------------------
+    SCROLL BAR STYLE
+----------------------------------------------------- */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #202020;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(to top,#45C1F1 5%, #F31EA9);
+    border-radius: 20px;
+}
+
+
+/* ---------------------------------------------------
+    BODY & APP STYLE
+----------------------------------------------------- */
+#app {
+    background: #363636;
+}
+
+body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #363636; 
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #202020;
+    color: white;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 7px 0px 0px 15px;
+    height: 70px;
+    display: table-cell;
+    vertical-align: middle;
+    background: #202020;
+}
+
+#sidebar ul li {
+    background-color: #202020;
+    padding: 20px 0px 18px 15px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li .bot-img {
+    width: 53px;
+    margin-right: 10px;
+    border-radius: 100%;
+    border: solid 1px #45C1F1;
+    padding: 5px;
+    background-clip: content-box;
+}
+
+#sidebar ul li .bot-info {
+    margin-left: 10px;
+}
+
+#sidebar ul li .bot-name {
+    font-size: 16px;
+    color: white;
+}
+
+#sidebar ul li .bot-intro {
+    font-size: 11px;
+    color: rgb(199, 199, 199);
+}
+
+#sidebar ul li:hover {
+    color: white;
+    background: #363636;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: white;
+    background: #363636;
+}
+
+.txt-gradient { 
+    background-image: linear-gradient(to left, #F31EA9 5%, #45C1F1);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
+/* ---------------------------------------------------
+    NAVBAR STYLE
+----------------------------------------------------- */
+.navbar {
+    background: #202020;
+    border: none;
+    height: 70px;
+    border-radius: 0;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+}
+
+.navbar-btn {
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    color: #F31EA9;
+    font-size: 25px;
+}
+
+.navbar-btn:hover {
+    color: #FF73CE;
+    animation: color 10s infinite;
+    animation: 3s slidein;
+}
+
+/* Menu-icon */
+.icon-menu {
+    margin-left: 7px;
+}
+
+.icon-menu label{
+    display:flex;
+    flex-direction:column;
+    width:50px;
+    cursor:pointer;
+}
+
+.icon-menu label span{
+    background-color: #F31EA9;
+    border-radius:10px;
+    height:5px;
+    margin: 5px 0;
+    transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+
+.icon-menu span:nth-of-type(1){
+    width:50%;
+}
+
+.icon-menu span:nth-of-type(2){
+    width:100%;
+}
+
+
+.icon-menu span:nth-of-type(3){
+    width:75%;
+}
+
+
+.icon-menu input[type="checkbox"]{
+    display: none;
+}
+
+
+.icon-menu input[type="checkbox"]:checked ~ span:nth-of-type(1){
+    transform-origin:bottom;
+    transform:rotatez(45deg) translate(8px,0px)
+}
+
+
+.icon-menu input[type="checkbox"]:checked ~ span:nth-of-type(2){
+    transform-origin:top;
+    transform:rotatez(-45deg)
+}
+
+
+.icon-menu input[type="checkbox"]:checked ~ span:nth-of-type(3){
+    transform-origin:bottom;
+    width:50%;
+    transform: translate(22px,-8px) rotatez(45deg);
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#content.active {
+    width: 100%;
+}
+
+#page {
+    background-color: #363636; height: 92vh;
+}
+
+/* CHAT INPUT */
+#input-chat {
+    width: 100%;
+    height: 70px;
+    position: sticky;
+    bottom: 0;
+    background-color: #202020;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+}
+
+.form-send {
+    width: 70%;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-send .input-send {
+    width: 100%;
+    border-radius: 100px;
+    color: #202020;
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+}
+
+.form-send .input-send:focus {
+    outline: 0 !important;
+    box-shadow: 0px 0px 3px 1px #45c0f198 !important;
+}
+
+.form-send .send-btn {
+    width: 100%;
+    background-color: #45C1F1;
+    color: white;
+    height: 36px;
+    text-align: center;
+    border-radius: 100px;
+}
+
+.form-send .send-btn:hover {
+    animation: bg-color 10s infinite;
+}
+
+.form-send .send-btn:focus {
+    outline: 0 !important;
+    box-shadow: 0px 0px 3px 1px #45c0f198 !important;
+}
+
+/* CHAT MESSAGES */
+#chat-box {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 95px;
+    padding-bottom: 10px;
+    overflow: auto;
+    min-height: calc(100vh - 70px);
+}
+
+.chat {
+    margin: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.bot-img {
+    width: 50px;
+    margin-bottom: auto;
+}
+
+.chat p {
+    padding: 15px;
+    line-height: 25px;
+    border-radius: 20px;
+    margin-left: 10px;
+    max-width: 60vw;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.right {
+    margin-left: auto;
+}
+
+.right p {
+    background-color: #75B9F0;
+    margin-right: 10px;
+}
+
+.left p {
+    background-color: #A380D7;
+    max-width: 50vw;
+    margin-left: 10px;
+}
+
+.chat .img-msg {
+    margin-left: 10px;
+    border-radius: 20px;
+    max-height: 300px;
+    max-width: 70%;
+}
+
+.temp {
+    width: 400px;
+    height: 420px;
+}
+
+.small-chat {
+    color: white;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.left {
+    margin-left: 10px;
+}
+
+.small-img {
+    margin-top: 0px;
+}
+
+.chat-img {
+    height: 300px;
+    align-items: flex-start;
+}
+
+.chat-ytb-comments {
+    margin: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: #A380D7;
+    padding: 0 15px;
+    padding-top: 15px;
+    line-height: 25px;
+    border-radius: 20px;
+    margin-left: 10px;
+    max-width: 60vw;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+    margin-left: 70px;
+}
+
+.ytb-comments {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ytb-comments p {
+    line-height: 25px;
+    margin-left: 10px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.ytb-comments a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #75B9F0;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.meteo-content {
+    /* display: flex;
+    align-items: center; */
+    background-color: #A380D7;
+    margin-left: 10px;
+    border-radius: 20px;
+    padding-top: 14px;
+    padding-right: 10px;
+    /* padding-left: 14px; */
+}
+
+.video-ytb-img {
+    width: 170px;
+}
+
+.channel-title {
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+}
+
+.pulished-video {
+    font-size: 15px;
+    color: rgb(196, 196, 196);
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+    .ytb-comments {
+        flex-direction: column;
+    }
+    #content {
+        width: calc(100% - 250px);
+    }
+    #content.active {
+        width: 100%;
+    }
+
+    #input-chat.active {
+        display: none;
+    }
+    .form-send {
+        width: 93%;
+    }
+    #chat-box.active {
+        display: none;
+    }
+    *::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+/* ---------------------------------------------------
+    ANIMATIONS
+----------------------------------------------------- */
+/* Couleurs */
+@keyframes color {
+    0%   {color:#FF73CE;}
+    12.5%  {color:#F31EA9;}
+    25%  {color:#A380D7;}
+    37.5%  {color:#3B46AF;}
+    50%  {color:#223D92;}
+    62.5%   {color:#245BA7;}
+    75%  {color:#45C1F1;}
+    87.5%  {color:#75B9F0;}
+    100%  {color:#FF73CE;}
+}
+
+@keyframes bg-color {
+    0%   {background-color:#75B9F0;}
+    12.5%  {background-color:#45C1F1;}
+    25%  {background-color:#245BA7;}
+    37.5%  {background-color:#223D92;}
+    50%  {background-color:#3B46AF;}
+    62.5%   {background-color:#A380D7;}
+    75%  {background-color:#F31EA9;}
+    87.5%  {background-color:#FF73CE;}
+    100%  {background-color:#75B9F0;}
+}
+
+@keyframes bg-color-2 {
+    0%   {background-color:#F31EA9;}
+    12.5%  {background-color:#FF73CE;}
+    25%  {background-color:#A380D7;}
+    37.5%  {background-color:#3B46AF;}
+    50%  {background-color:#223D92;}
+    62.5%   {background-color:#245BA7;}
+    75%  {background-color:#45C1F1;}
+    87.5%  {background-color:#75B9F0;}
+    100%  {background-color:#F31EA9;}
+}

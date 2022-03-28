@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot-io</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+  <body>
+    <div id="app">
+
+        <div class="wrapper">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="active">
+                <div class="sidebar-header">
+                    <h3 class="txt-gradient">Chat bot</h3>
+                </div>
+
+                <ul id="list-bots" class="list-unstyled components"></ul>
+            </nav>
+
+            <!-- Content -->
+            <div id="content" class="active">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <div class="icon-menu">
+
+                                <label for="check">
+                                    <input type="checkbox" id="check"/> 
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </label>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div id="page">
+                    <div id="content-chat">
+                        <div id="chat-box"></div>
+                    </div>
+                    <div id="input-chat">
+                        <form class="form-send">
+                            <div class="row">
+                                <div class="col-10">
+                                    <input class="input-send form-control" type="text" name="messageToSend" id="messageToSend" autocomplete="off">
+                                </div>
+                                <div class="col-2">
+                                    <button type="submit" class="btn send-btn" id="buttonSend"><i class="fas fa-paper-plane"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/6f0f47d564.js" crossorigin="anonymous"></script>
+    <script src="./js/Bot.js"></script>
+    <script src="./js/Command.js"></script>
+    <script src="./js/Message.js"></script>
+    <script src="./js/Chatbot.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
